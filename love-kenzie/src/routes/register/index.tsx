@@ -1,3 +1,4 @@
+import { Button } from '../../components/button'
 import { Input } from '../../components/input'
 import { Title } from '../../components/title'
 
@@ -21,11 +22,23 @@ export const RegisterPage = () => {
 			</div>
 
 			<p>or use your email for registration:</p>
+
 			<div>
-				<Input placeholder='Name' />
-				<Input placeholder='Email' />
-				<Input placeholder='Password' />
-				<Input placeholder='Confirm Password' />
+				<Input placeholder='Name' type='text' />
+				<Input placeholder='Email' type='email' />
+				<Input placeholder='Password' type='password' />
+				<Input placeholder='Confirm Password' type='password' />
+				<Input placeholder='Age' type='number' />
+			</div>
+
+			<div>
+				<Input type='checkbox' />
+				<small>I agree to the Terms</small>
+			</div>
+
+			<div>
+				<Button text='Sign Up' type='submit' />
+				<Button text='Sign In' />
 			</div>
 		</section>
 	)
