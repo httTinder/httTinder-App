@@ -30,7 +30,6 @@ export const Container = styled.div`
 		}
 	}};
 
-	background-color: aqua;
 	margin: 0 auto;
 	max-width: ${(props) => props.containerWidth}px;
 	width: 100%;

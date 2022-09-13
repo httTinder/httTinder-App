@@ -63,8 +63,12 @@ export const RegisterPage = () => {
 						</div>
 
 						<div className='sign-buttons'>
-							<Button type='submit'>Sign Up</Button>
-							<Button type='button'>Sign In</Button>
+							<Button selected type='submit'>
+								Sign Up
+							</Button>
+							<Button notSelected type='button'>
+								Sign In
+							</Button>
 						</div>
 					</Main>
 				</Section>
