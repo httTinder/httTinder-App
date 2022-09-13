@@ -4,10 +4,12 @@ export default createGlobalStyle`
      :root{
           --purple: #9747FF ;
           --pink: #F299B9 ;
-          --white: #FFFFFF ;
           --red: #D7234D;
+          --white: #FFFFFF ;
+          --transparent-black: rgba(0, 0, 0, 0.43);
 
-     
+          --box-shadow:  -11px 20px 6px rgba(0, 0, 0, 0.25);
+          --button-hover-shadow: 0px 9px 6px rgba(0, 0, 0, 0.27);
      }
 
    * {

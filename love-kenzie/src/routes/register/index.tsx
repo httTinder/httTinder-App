@@ -8,21 +8,16 @@ import mail from '../../assets/socials/mail.svg'
 
 import lhamaSheep from '../../assets/animals/lhamaSheep.svg'
 import logoDesk from '../../assets/logo/LogoDesk.png'
+import { Main, MainWrapper, Section } from './style'
 
 export const RegisterPage = () => {
 	return (
-		<>
-			<section>
-				<img src={logoDesk} />
-				<SubTitle>Join us and find your perfect match!</SubTitle>
-				<img src={lhamaSheep} alt='' />
-			</section>
-
-			<section>
+		<MainWrapper>
+			<Section whiteBackground boxShadow borderRadius={15} padding={2}>
 				<header>
 					<Title>Create Account</Title>
 				</header>
-				<main>
+				<Main>
 					<div>
 						<a>
 							<img src={mail} alt='Login with mail' />
@@ -53,8 +48,14 @@ export const RegisterPage = () => {
 						<Button type='submit'>Sign Up</Button>
 						<Button type='button'>Sign In</Button>
 					</div>
-				</main>
-			</section>
-		</>
+				</Main>
+			</Section>
+
+			<Section>
+				<img src={logoDesk} />
+				<SubTitle>Join us and find your perfect match!</SubTitle>
+				<img src={lhamaSheep} alt='' />
+			</Section>
+		</MainWrapper>
 	)
 }
