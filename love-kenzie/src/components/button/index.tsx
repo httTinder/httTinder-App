@@ -1,9 +1,9 @@
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	text: string
+	children: ReactNode
 }
 
-export const Button = ({ text, ...rest }: ButtonProps) => {
-	return <button {...rest}>{text}</button>
+export const Button = ({ children, ...rest }: ButtonProps) => {
+	return <button {...rest}>{children}</button>
 }

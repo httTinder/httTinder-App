@@ -1,7 +1,9 @@
+import { ReactNode } from 'react'
+
 interface TitleProps {
-	text: string
+	children: ReactNode
 }
 
-export const Title = ({ text }: TitleProps) => {
-	return <h1> {text} </h1>
+export const Title = ({ children }: TitleProps) => {
+	return <h1> {children} </h1>
 }
