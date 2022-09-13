@@ -1,4 +1,4 @@
-import { Routes } from './routes'
+import { Routes } from './routes/routes'
 import Global from './styles/global'
 
 const App = () => {

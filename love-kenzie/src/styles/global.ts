@@ -35,7 +35,10 @@ export default createGlobalStyle`
      h2, button{
           font-family: 'Secular One', sans-serif;
      }
-     
+     img{
+          max-width: 100%;
+          height: auto;
+     }
      p, li, input{
           font-family: 'Didact Gothic', sans-serif;
      }
