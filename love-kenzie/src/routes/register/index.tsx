@@ -19,40 +19,41 @@ export const RegisterPage = () => {
 			</section>
 
 			<section>
-				<div>
+				<header>
 					<Title>Create Account</Title>
-				</div>
+				</header>
+				<main>
+					<div>
+						<a>
+							<img src={mail} alt='Login with mail' />
+						</a>
+						<a>
+							<img src={facebook} alt='Login with facebook' />
+						</a>
+					</div>
 
-				<div>
-					<a>
-						<img src={mail} alt='Login with mail' />
-					</a>
-					<a>
-						<img src={facebook} alt='Login with facebook' />
-					</a>
-				</div>
+					<p>or use your email for registration:</p>
 
-				<p>or use your email for registration:</p>
+					<div>
+						<Input placeholder='Name' type='text' />
+						<Input placeholder='Email' type='email' />
+						<Input placeholder='Password' type='password' />
+						<Input placeholder='Confirm Password' type='password' />
+						<Input placeholder='Age' type='number' />
+					</div>
 
-				<div>
-					<Input placeholder='Name' type='text' />
-					<Input placeholder='Email' type='email' />
-					<Input placeholder='Password' type='password' />
-					<Input placeholder='Confirm Password' type='password' />
-					<Input placeholder='Age' type='number' />
-				</div>
+					<div>
+						<Input type='checkbox' />
+						<small>
+							I agree to the <a>Terms</a>
+						</small>
+					</div>
 
-				<div>
-					<Input type='checkbox' />
-					<small>
-						I agree to the <a>Terms</a>
-					</small>
-				</div>
-
-				<div>
-					<Button type='submit'>Sign Up</Button>
-					<Button type='button'>Sign In</Button>
-				</div>
+					<div>
+						<Button type='submit'>Sign Up</Button>
+						<Button type='button'>Sign In</Button>
+					</div>
+				</main>
 			</section>
 		</>
 	)
