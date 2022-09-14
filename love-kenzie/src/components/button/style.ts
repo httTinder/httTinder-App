@@ -17,6 +17,11 @@ export const ButtonStyle = styled.button`
 			return css`
 				color: var(--white);
 				background-color: var(--red);
+
+				&:hover {
+					border: 5 solid #fff;
+					box-shadow: var(--button-hover-shadow);
+				}
 			`
 		}
 	}};
@@ -27,12 +32,11 @@ export const ButtonStyle = styled.button`
 				color: var(--red);
 
 				background-color: var(--white);
+				&:hover {
+					border: 3px solid transparent;
+					box-shadow: var(--button-hover-shadow);
+				}
 			`
 		}
 	}};
-
-	&:hover {
-		border: 3px solid transparent;
-		box-shadow: var(--button-hover-shadow);
-	}
 `

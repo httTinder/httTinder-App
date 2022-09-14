@@ -26,6 +26,7 @@ export default createGlobalStyle`
      
      body {
           overflow-x: hidden;
+	background-color: var(--pink);
      }
      
      h1{
@@ -67,11 +68,11 @@ export default createGlobalStyle`
 
        /* Handle */
      ::-webkit-scrollbar-thumb {
-          background: #F2A30B;
+          background: var(--red);
           border-radius: 1.6rem;
      }
      /* Handle on hover */
      ::-webkit-scrollbar-thumb:hover {
-          background: #F2A30B;
+          background:  var(--red);
      }
 `
