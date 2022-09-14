@@ -79,9 +79,13 @@ export const RegisterPage = () => {
 				</Section>
 
 				<Section padding>
-					<img src={logoDesk} />
-					<SubTitle>Join us and find your perfect match!</SubTitle>
-					<img className='animalImg' src={lhamaSheep} alt='' />
+					<div className='flex-wrapper'>
+						<img src={logoDesk} />
+						<SubTitle>
+							Join us and find your perfect match!
+						</SubTitle>
+						<img className='animalImg' src={lhamaSheep} alt='' />
+					</div>
 				</Section>
 			</Container>
 		</MainWrapper>

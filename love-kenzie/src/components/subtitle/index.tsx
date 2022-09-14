@@ -1,9 +1,10 @@
 import { ReactNode } from 'react'
+import { SubtitleStyle } from './style'
 
 interface SubTitleProps {
 	children: ReactNode
 }
 
 export const SubTitle = ({ children }: SubTitleProps) => {
-	return <h2> {children} </h2>
+	return <SubtitleStyle> {children} </SubtitleStyle>
 }
