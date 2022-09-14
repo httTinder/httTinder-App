@@ -89,20 +89,14 @@ export const RegisterPage = () => {
 						</p>
 
 						<div className='inputs-wrappers'>
-							<input placeholder='Name' type='text' {...register("name")}/>
-							<span><>{errors?.name?.message}</></span>
-							<input placeholder='Email' type='email' {...register("email")}/>
-							<span><>{errors?.email?.message}</></span>
-							<input placeholder='Password' type='password' {...register("password")}/>
-							<span><>{errors?.password?.message}</></span>
-							<input
+							<Input placeholder='Name' type='text' />
+							<Input placeholder='Email' type='email'/>
+							<Input placeholder='Password' type='password' />
+							<Input
 								placeholder='Confirm Password'
 								type='password'
-								{...register("confirmPassword")}
-							/>
-							<span><>{errors?.confirmPassword?.message}</></span>
-							<input placeholder='Age' type='number' {...register("age")} />
-							<span><>{errors?.age?.message}</></span>
+								/>
+							<Input placeholder='Age' type='number' />
 						</div>
 
 						<div>
