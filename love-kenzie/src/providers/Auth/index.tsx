@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   IAuthContext,
@@ -11,60 +11,67 @@ import {
 } from "../../interfaces/context.interface";
 import Api from "../../services";
 
-export const AuthContext = createContext({} as IAuthContext);
+export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
-const AuthProvider = async ({ children }: IAuthProvider) => {
-  const navigate = useNavigate();
+const AuthProvider = ({ children }: IAuthProvider) => {
+  const [token, setToken] = useState("");
+  const [message, setMessage] = useState("");
 
-  async function createUser(data: ICreateUser) {
+  function createUser(data: ICreateUser) {
     const { name, email, password, age } = data;
 
     const envUser = { name, email, password, age };
-    let message = "";
-    await Api.post("users", envUser)
+    Api.post("user", envUser, {
+      headers: {
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+        "Content-Type": "application/json",
+      },
+    })
       .then((data: AxiosResponse) => {
-        message = data.data.message;
+        setMessage(data?.data?.message);
+        console.log(data);
       })
-      .catch((error: AxiosResponse) => (message = error.data.message));
-
-    return message;
+      .catch((error: AxiosResponse) => {
+        setMessage(error?.data?.message);
+        console.log(error);
+      });
+    console.log(message);
+    return "";
   }
 
-  async function validateEmail({ tokenEmail }: IParamsValidateEmail) {
-    let message = "";
-    await Api.patch(`user/email/${tokenEmail}`)
+  function validateEmail({ tokenEmail }: IParamsValidateEmail) {
+    Api.patch(`user/email/${tokenEmail}`)
       .then((data: AxiosResponse) => {
-        message = data.data.message;
+        setMessage(data.data.message);
       })
-      .catch((error: AxiosResponse) => (message = error.data.message));
-    return message;
+      .catch((error: AxiosResponse) => setMessage(error.data.message));
+    return "";
   }
 
-  async function login(userDataLogin: IUserDataLogin) {
-    let message = "";
-    await Api.post("session", userDataLogin)
+  function login(userDataLogin: IUserDataLogin) {
+    Api.post("session", userDataLogin)
       .then((data: AxiosResponse) => {
-        message = data.data.message;
+        setMessage(data.data.message);
       })
-      .catch((error: AxiosResponse) => (message = error.data.message));
+      .catch((error: AxiosResponse) => setMessage(error.data.message));
 
-    return message;
+    return "";
   }
 
-  async function resendEmail (email: IParamsResendEmail) {
-    let message = "";
-    await Api.patch("resend", email)
+  function resendEmail(email: IParamsResendEmail) {
+    Api.patch("resend", email)
       .then((data: AxiosResponse) => {
-        message = data.data.message;
+        setMessage(data.data.message);
+        setToken(data.data?.accessToken);
       })
-      .catch((error: AxiosResponse) => (message = error.data.message));
+      .catch((error: AxiosResponse) => setMessage(error.data.message));
 
-    return message;
+    return "";
   }
 
   return (
     <AuthContext.Provider
-      value={{ createUser, validateEmail, login ,resendEmail  }}
+      value={{ createUser, validateEmail, login, resendEmail, token }}
     >
       {children}
     </AuthContext.Provider>
