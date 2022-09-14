@@ -32,15 +32,22 @@ export default createGlobalStyle`
           font-family: 'Lobster Two', cursive;
      }
      
-     h2, button{
+     h2, button, label{
           font-family: 'Secular One', sans-serif;
      }
+     
+
      img{
           max-width: 100%;
           height: auto;
      }
+
      p, li, input{
           font-family: 'Didact Gothic', sans-serif;
+     }
+
+     input::-webkit-input-placeholder{
+          font-weight: 500;
      }
 
      button {

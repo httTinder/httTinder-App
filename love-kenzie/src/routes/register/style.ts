@@ -70,10 +70,31 @@ export const Main = styled.main`
 		display: flex;
 		gap: 2rem;
 	}
+	.socials > a > img {
+		border: 5px solid transparent;
+		border-radius: 100px;
 
+		transition: ease-in-out 200ms;
+	}
+
+	.socials > a > img:hover {
+		box-shadow: var(--button-hover-shadow);
+		cursor: pointer;
+	}
+	.text-orientation {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 26px;
+		font-family: 'Secular One', sans-serif;
+	}
 	.inputs-wrappers {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+	}
+	.terms-checkbox {
+		margin: 0 1rem;
+		border-radius: 50px;
+		cursor: pointer;
 	}
 `

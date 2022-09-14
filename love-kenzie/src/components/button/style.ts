@@ -10,6 +10,8 @@ export const ButtonStyle = styled.button`
 	padding: 0.8rem 4rem;
 	border: 3px solid var(--red);
 
+	transition: ease-in-out 200ms;
+
 	${(props: IButton) => {
 		if (props.selected) {
 			return css`
@@ -30,6 +32,7 @@ export const ButtonStyle = styled.button`
 	}};
 
 	&:hover {
-		filter: drop-shadow (var('--button-hover-shadow'));
+		border: 3px solid transparent;
+		box-shadow: var(--button-hover-shadow);
 	}
 `

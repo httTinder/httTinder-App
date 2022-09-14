@@ -42,7 +42,9 @@ export const RegisterPage = () => {
 							</a>
 						</div>
 
-						<p>or use your email for registration:</p>
+						<p className='text-orientation'>
+							or use your email for registration:
+						</p>
 
 						<div className='inputs-wrappers'>
 							<Input placeholder='Name' type='text' />
@@ -56,10 +58,13 @@ export const RegisterPage = () => {
 						</div>
 
 						<div>
-							<Input type='checkbox' />
-							<small>
-								I agree to the <a>Terms</a>
-							</small>
+							<label className='terms'>
+								<Input
+									className='terms-checkbox'
+									type='checkbox'
+								/>
+								Agree to the <a href='#'>Terms</a>
+							</label>
 						</div>
 
 						<div className='sign-buttons'>
