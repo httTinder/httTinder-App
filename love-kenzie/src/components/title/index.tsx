@@ -1,9 +1,10 @@
 import { ReactNode } from 'react'
+import { TitleStyle } from './style'
 
 interface TitleProps {
 	children: ReactNode
 }
 
 export const Title = ({ children }: TitleProps) => {
-	return <h1> {children} </h1>
+	return <TitleStyle> {children} </TitleStyle>
 }

@@ -1,11 +1,6 @@
 import styled, { css } from 'styled-components'
 
 export const MainWrapper = styled.div`
-	background-color: var(--pink);
-
-	width: 100vw;
-	height: 100vh;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,6 +9,7 @@ export const MainWrapper = styled.div`
 		text-align: center;
 	}
 `
+
 interface PropsSection {
 	whiteBackground?: boolean
 	boxShadow?: boolean
@@ -23,6 +19,13 @@ interface PropsSection {
 }
 
 export const Section = styled.section`
+	.flex-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		justify-content: space-between;
+	}
+
 	min-width: ${(props: PropsSection) => props.minWidth}px;
 	width: 100%;
 	box-shadow: var(
