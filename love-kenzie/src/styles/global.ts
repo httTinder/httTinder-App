@@ -29,11 +29,11 @@ export default createGlobalStyle`
 	     background-color: var(--pink);
      }
      
-     h1{
+     h1, h2{
           font-family: 'Lobster Two', cursive;
      }
      
-     h2, button, label{
+     button, label{
           font-family: 'Secular One', sans-serif;
      }
      

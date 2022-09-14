@@ -19,6 +19,13 @@ interface PropsSection {
 }
 
 export const Section = styled.section`
+	.flex-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		justify-content: space-between;
+	}
+
 	min-width: ${(props: PropsSection) => props.minWidth}px;
 	width: 100%;
 	box-shadow: var(
