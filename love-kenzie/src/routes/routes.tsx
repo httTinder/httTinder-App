@@ -1,5 +1,10 @@
-import { RegisterPage } from './register'
+import CheckEmailPage from './email'
 
 export const Routes = () => {
-	return <RegisterPage />
+	return (
+		<>
+			<CheckEmailPage />
+			{/* <RegisterPage /> */}
+		</>
+	)
 }
