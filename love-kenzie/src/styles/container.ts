@@ -8,6 +8,7 @@ interface IContainer {
 	alignItems?: string
 	gap?: number
 	containerWidth?: number
+	flexDirectionNormal?: string
 }
 
 export const Container = styled.div`
@@ -16,6 +17,7 @@ export const Container = styled.div`
 		props.justifyContent && props.justifyContent};
 	align-items: ${(props: IContainer) => props.alignItems && props.alignItems};
 	gap: ${(props: IContainer) => props.gap && `${props.gap}rem`};
+	flex-direction: ${(props: IContainer) => props.flexDirectionNormal};
 
 	${(props: IContainer) => {
 		if (props.flexDirection) {
