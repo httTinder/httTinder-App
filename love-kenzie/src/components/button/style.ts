@@ -7,8 +7,23 @@ interface IButton {
 
 export const ButtonStyle = styled.button`
 	border-radius: 10px;
-	padding: 0.8rem 4rem;
 	border: 3px solid var(--red);
+	/* padding: 0.2rem 3rem; */
+	height: 40px;
+	width: 130px;
+
+	@media (min-width: 425px) {
+		width: 160px;
+	}
+	@media (min-width: 650px) {
+		width: 200px;
+	}
+	@media (min-width: 768px) {
+		width: 130px;
+	}
+	@media (min-width: 928px) {
+		width: 170px;
+	}
 
 	transition: ease-in-out 200ms;
 
