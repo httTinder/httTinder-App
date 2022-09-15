@@ -12,47 +12,13 @@ import logoDesk from '../../assets/logo/LogoDesk.png'
 import { Container } from '../../styles/container'
 import { Main, MainWrapper, Section } from './style'
 
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-//import registerSchema from '../../schemas/register.schema'
 import { AuthContext } from '../../providers/Auth'
 import { useContext } from 'react'
-import { ICreateUser } from '../../interfaces/context.interface'
-import * as yup from "yup";
+
 
 export const RegisterPage = () => {
 
 	const { createUser } = useContext(AuthContext);
-
-	const registerSchema = yup.object().shape({
-		name: yup.string().required("Nome obrigatório"),
-		email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
-		password: yup
-		  .string()
-		  .required("Senha obrigatório")
-		  .min(8, "deve conter 8 digitos")
-		  .matches(
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-			"Senha deve conter 8 caracteres, um maiúsculo, um minúsculo, um número e um especial"
-		  ),
-		confirmPassword: yup
-		  .string()
-		  .required("Confirme sua senha!")
-		  .oneOf([yup.ref("password")], "Senhas não correspondem")
-		  .required("Confirmação de email é obrigatória"),
-		age: yup
-		  .number()
-		  .min(18, "A idade minima é 18 anos")
-		  .required("Idade é obrigatória"),
-	  });
-
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	  } = useForm<ICreateUser>({ resolver: yupResolver(registerSchema) });
-
-	  
 
 	return (
 		<MainWrapper>
@@ -74,7 +40,7 @@ export const RegisterPage = () => {
 						<Title>Create Account</Title>
 					</header>
 					<Main>
-						<form onSubmit={handleSubmit(createUser)}> 
+						<form onSubmit={() => createUser}> 
 						<div className='socials'>
 							<a>
 								<img src={mail} alt='Login with mail' />
