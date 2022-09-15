@@ -14,6 +14,7 @@ import Api from "../../services";
 export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider = ({ children }: IAuthProvider) => {
+  const navigate = useNavigate();
   const [token, setToken] = useState("");
   const [message, setMessage] = useState("");
 
@@ -28,12 +29,14 @@ const AuthProvider = ({ children }: IAuthProvider) => {
       },
     })
       .then((data: AxiosResponse) => {
-        setMessage(data?.data?.message);
+        setMessage("Checked");
         console.log(data);
+        navigate("/registerfinish");
       })
       .catch((error: AxiosResponse) => {
-        setMessage(error?.data?.message);
+        setMessage("Error");
         console.log(error);
+        navigate("/registerfinish");
       });
     console.log(message);
     return "";
@@ -42,18 +45,26 @@ const AuthProvider = ({ children }: IAuthProvider) => {
   function validateEmail({ tokenEmail }: IParamsValidateEmail) {
     Api.patch(`user/email/${tokenEmail}`)
       .then((data: AxiosResponse) => {
-        setMessage(data.data.message);
+        setMessage("Checked");
+        console.log(data);
       })
-      .catch((error: AxiosResponse) => setMessage(error.data.message));
-    return "";
+      .catch((error: AxiosResponse) => {
+        setMessage("Error");
+        console.log(error);
+      });
+    return message;
   }
 
   function login(userDataLogin: IUserDataLogin) {
     Api.post("session", userDataLogin)
       .then((data: AxiosResponse) => {
-        setMessage(data.data.message);
+        setMessage("Checked");
+        console.log(data);
       })
-      .catch((error: AxiosResponse) => setMessage(error.data.message));
+      .catch((error: any) => {
+        setMessage("Error");
+        console.log(error);
+      });
 
     return "";
   }
@@ -71,7 +82,7 @@ const AuthProvider = ({ children }: IAuthProvider) => {
 
   return (
     <AuthContext.Provider
-      value={{ createUser, validateEmail, login, resendEmail, token }}
+      value={{ createUser, validateEmail, login, resendEmail, token, message }}
     >
       {children}
     </AuthContext.Provider>

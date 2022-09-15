@@ -14,6 +14,7 @@ export interface IAuthContext {
   login: (userDataLogin: IUserDataLogin) => string;
   resendEmail: (email : IParamsResendEmail) => string;
   token: string
+  message:  string
 }
 
 export interface IAuthProvider {
@@ -21,7 +22,7 @@ export interface IAuthProvider {
 }
 
 export interface IParamsValidateEmail {
-  tokenEmail: string;
+  tokenEmail: any;
 }
 
 export interface IUserDataLogin {
