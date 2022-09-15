@@ -61,18 +61,21 @@ export const Section = styled.section`
 `
 
 export const Main = styled.main`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 2rem;
-
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+	}
 	.socials,
 	.sign-buttons,
 	.inputs-wrappers {
 		display: flex;
+		justify-content: center;
 		gap: 2rem;
 	}
+
 	.socials > a > img {
 		border: 5px solid transparent;
 		border-radius: 100px;
@@ -94,10 +97,5 @@ export const Main = styled.main`
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-	}
-	.terms-checkbox {
-		margin: 0 1rem;
-		border-radius: 50px;
-		cursor: pointer;
 	}
 `

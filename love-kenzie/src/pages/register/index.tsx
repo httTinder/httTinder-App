@@ -15,6 +15,7 @@ import { Main, MainWrapper, Section } from "./style";
 import { AuthContext } from "../../providers/Auth";
 import { useContext, useState } from "react";
 
+
 export const RegisterPage = () => {
   const { createUser } = useContext(AuthContext);
 
