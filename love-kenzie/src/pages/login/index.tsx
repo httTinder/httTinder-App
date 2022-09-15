@@ -50,12 +50,14 @@ const LoginPage = () => {
 								<Input placeholder='Password' type='password' />
 							</div>
 							<a href='#'>Recovery password</a>
-							<Button notSelected type='button'>
-								Sign Up
-							</Button>
-							<Button selected type='submit'>
-								Sign In
-							</Button>
+							<div className='sign-buttons'>
+								<Button selected type='submit'>
+									Sign Up
+								</Button>
+								<Button notSelected type='button'>
+									Sign In
+								</Button>
+							</div>
 						</form>
 					</Main>
 				</Section>
