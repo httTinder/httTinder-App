@@ -12,13 +12,11 @@ import logoDesk from '../../assets/logo/LogoDesk.png'
 import { Container } from '../../styles/container'
 import { Main, MainWrapper, Section } from './style'
 
-import { AuthContext } from '../../providers/Auth'
 import { useContext } from 'react'
-
+import { AuthContext } from '../../providers/Auth'
 
 export const RegisterPage = () => {
-
-	const { createUser } = useContext(AuthContext);
+	const { createUser } = useContext(AuthContext)
 
 	return (
 		<MainWrapper>
@@ -40,49 +38,42 @@ export const RegisterPage = () => {
 						<Title>Create Account</Title>
 					</header>
 					<Main>
-						<form onSubmit={() => createUser}> 
-						<div className='socials'>
-							<a>
-								<img src={mail} alt='Login with mail' />
-							</a>
-							<a>
-								<img src={facebook} alt='Login with facebook' />
-							</a>
-						</div>
+						<form onSubmit={() => createUser}>
+							<div className='socials'>
+								<a>
+									<img src={mail} alt='Login with mail' />
+								</a>
+								<a>
+									<img
+										src={facebook}
+										alt='Login with facebook'
+									/>
+								</a>
+							</div>
 
-						<p className='text-orientation'>
-							or use your email for registration:
-						</p>
+							<p className='text-orientation'>
+								or use your email for registration:
+							</p>
 
-						<div className='inputs-wrappers'>
-							<Input placeholder='Name' type='text' />
-							<Input placeholder='Email' type='email'/>
-							<Input placeholder='Password' type='password' />
-							<Input
-								placeholder='Confirm Password'
-								type='password'
-								/>
-							<Input placeholder='Age' type='number' />
-						</div>
-
-						<div>
-							<label className='terms'>
+							<div className='inputs-wrappers'>
+								<Input placeholder='Name' type='text' />
+								<Input placeholder='Email' type='email' />
+								<Input placeholder='Password' type='password' />
 								<Input
-									className='terms-checkbox'
-									type='checkbox'
+									placeholder='Confirm Password'
+									type='password'
 								/>
-								Agree to the <a>Terms</a>
-							</label>
-						</div>
+								<Input placeholder='Age' type='number' />
+							</div>
 
-						<div className='sign-buttons'>
-							<Button selected type='submit' >
-								Sign Up
-							</Button>
-							<Button notSelected type='button'>
-								Sign In
-							</Button>
-						</div>
+							<div className='sign-buttons'>
+								<Button selected type='submit'>
+									Sign Up
+								</Button>
+								<Button notSelected type='button'>
+									Sign In
+								</Button>
+							</div>
 						</form>
 					</Main>
 				</Section>
