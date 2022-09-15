@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react'
+import React, { Dispatch, InputHTMLAttributes } from 'react'
 import { InputStyle } from './style'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
