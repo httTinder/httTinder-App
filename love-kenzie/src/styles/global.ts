@@ -43,10 +43,14 @@ export default createGlobalStyle`
           height: auto;
      }
 
-     p, li, input{
+     p, li, input, a{
           font-family: 'Didact Gothic', sans-serif;
      }
 
+     a {
+          cursor: pointer;
+          text-decoration: none;
+     }
      input::-webkit-input-placeholder{
           font-weight: 500;
      }
