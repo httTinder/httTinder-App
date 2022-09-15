@@ -42,7 +42,7 @@ const AuthProvider = ({ children }: IAuthProvider) => {
     return "";
   }
 
-  function validateEmail({ tokenEmail }: IParamsValidateEmail) {
+  function validateEmail( tokenEmail : IParamsValidateEmail) {
     Api.patch(`user/email/${tokenEmail}`)
       .then((data: AxiosResponse) => {
         setMessage("Checked");
@@ -52,6 +52,7 @@ const AuthProvider = ({ children }: IAuthProvider) => {
         setMessage("Error");
         console.log(error);
       });
+      console.log(tokenEmail)
     return message;
   }
 

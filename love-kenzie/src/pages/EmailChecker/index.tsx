@@ -39,6 +39,7 @@ const EmailChecker = () => {
 
 	useEffect(() => {
 		if (message === "") {
+			console.log(tokenEmail)
 
 			validateEmail(tokenEmail)
 		}
