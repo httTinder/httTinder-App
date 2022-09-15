@@ -14,8 +14,9 @@ export const BoxWrapper = styled.div`
 	}
 
 	.ghost {
-		position: absolute;
-		bottom: -50px;
-		right: 0;
+		position: fixed;
+		bottom: 10vh;
+		right: 10vw;
+		height: 40%;
 	}
 `

@@ -5,7 +5,7 @@ import { SubTitle } from '../../components/subtitle'
 import { Title } from '../../components/title'
 
 import { Container } from '../../styles/container'
-import { Section } from '../register/style'
+import { Section } from '../register/style' 
 import { BoxWrapper } from './style'
 
 const CheckEmailPage = () => {
@@ -33,8 +33,8 @@ const CheckEmailPage = () => {
 					<p>Oops, didn't get the email?</p>
 					{/* {user.email} */}
 					<a>Send me another email, please.</a>
-				</BoxWrapper>
 				<img className='ghost' src={Ghost} alt='' />
+				</BoxWrapper>
 			</Section>
 		</Container>
 	)
